@@ -26,8 +26,8 @@ void delete_Node(struct Node *head,int key);
 void main(){
 	int ch,running = 1;
 	int data,key;
-	struct Node *list;
-	list->data = NULL;
+	struct Node *list = (struct Node*)malloc(sizeof(struct Node));  
+	list->data = 0;  
 	list->next = NULL;
 
 	printf("\nMENU\n");
