@@ -11,7 +11,7 @@
 struct Node {
 	int data;
 	struct Node *next;
-} *temp,*head,*current;
+};
 
 //Function Prototypes
 void display(struct Node *head);
@@ -21,8 +21,8 @@ void pop(struct Node *head);
 //Main Function
 void main(){
 	int ch,running = 1;
-	int data,key;
-	struct Node *stack;
+	int data;
+	struct Node *stack = malloc(sizeof(struct Node));
 	stack->next = NULL;
 
 	printf("\nMENU\n");
@@ -59,6 +59,7 @@ void main(){
 
 //Function to display the nodes
 void display(struct Node *head){
+	struct Node *current;
 	if(head->next == NULL) {
 		printf("Stack is empty\n");
 		return;
@@ -74,7 +75,7 @@ void display(struct Node *head){
 
 //Function to insert at beginning
 void push(struct Node *head,int data){
-	temp = malloc(sizeof(struct Node));
+	struct Node *temp = malloc(sizeof(struct Node));
 	temp->data = data;
 	temp->next = head->next;
 	head->next = temp;
@@ -83,6 +84,7 @@ void push(struct Node *head,int data){
 
 //Function to delete the node at beginning
 void pop(struct Node *head){
+	struct Node *temp;
 	int num;
 	if(head->next == NULL) {
 		printf("Stack is empty\n");
