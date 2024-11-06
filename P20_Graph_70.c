@@ -212,6 +212,7 @@ void main() {
         printf("\nBFS from vertex %d: ", startVertex);
         resetVisited(&graph);
         BFS(&graph, startVertex);
+        printf("\n");
     } else {
         printf("\nInvalid starting vertex!");
     }
